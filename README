@@ -1,0 +1,34 @@
+This plugin is originally by Drew Wilson (http://code.drewwilson.com/entry/tiptip-jquery-plugin).
+
+The whole documentation still applies, however you now are able to select the content of the tooltip via the enter callback:
+
+    <a class="js_tiptip">Foo
+      <span class="hidden">Bar
+      </span>
+    </a>
+
+    $(function() {
+      $(".js_tiptip").tipTip({
+        enter: function() {
+          return $(this).find("span").html();
+        }});                      
+    });
+
+This will create a normal tipTip tooltip, fetching the content from the inner span element of the anchor tag.
+
+If you don't want to set the content of the tooltip, but still want to use the callback to do something, return nothing:
+
+    <a class="js_tiptip" title="foz">Foo
+      <span class="hidden">Bar
+      </span>
+    </a>
+
+    $(function() {
+      $(".js_tiptip").tipTip({
+        enter: function() {
+          doSomething();
+        }});                      
+    });
+    
+
+This will create a tooltip, using the default behaviour of tipTip, by fetching the content from the title tag.
