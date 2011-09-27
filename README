@@ -14,7 +14,8 @@ The whole documentation still applies, however you now are able to select the co
         }});                      
     });
 
-This will create a normal tipTip tooltip, fetching the content from the inner span element of the anchor tag.
+This will create a normal tipTip tooltip, fetching the content from the inner span element of the anchor tag. You aren't confined
+to elements already in the DOM, you can easily request the content via ajax.
 
 If you don't want to set the content of the tooltip, but still want to use the callback to do something, return nothing:
 
