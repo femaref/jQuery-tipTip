@@ -98,8 +98,8 @@
 				}
 			
 				function active_tiptip(){
-					opts.enter.call(this);
-					tiptip_content.html(org_title);
+					var ret = opts.enter.call(org_elem);
+					tiptip_content.html(ret || org_title);
 					tiptip_holder.hide().removeAttr("class").css("margin","0");
 					tiptip_arrow.removeAttr("style");
 					
