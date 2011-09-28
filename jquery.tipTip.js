@@ -99,7 +99,8 @@
 			
 				function active_tiptip(){
 					var ret = opts.enter.call(org_elem);
-					tiptip_content.html(ret || org_title);
+					tiptip_content.empty();
+					tiptip_content.append(ret.clone() || org_title);
 					tiptip_holder.hide().removeAttr("class").css("margin","0");
 					tiptip_arrow.removeAttr("style");
 					
